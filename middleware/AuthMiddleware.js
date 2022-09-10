@@ -141,14 +141,3 @@ module.exports = { requireAuth,verifyUser,verifyAdmin }
 
 
 
-/* 
-requireAuth(req,res,()=>{
-
-    if (req.Users._id===req.params.id || req.Users.isAdmin){
-      
-        next();
-    }
-    else {
-        return next(ErrorHandler(404,'user not verified '))
-    }
-}) */
