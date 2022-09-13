@@ -1,6 +1,6 @@
 const express = require('express')
 const Route =express.Router()
-const {} = require('../controller/Hotelscontroller.js')
+const { countByCity, countTypes, searchHotel } = require('../controller/Hotelscontroller.js')
 const{
     addHotel,showHotels,deleteHotel,updateHotel
 }= require("../controller/Hotelscontroller")
@@ -11,11 +11,14 @@ const {verifyAdmin}= require('../middleware/AuthMiddleware.js')
 
 
 
-Route.post('/api/add',addHotel)
-Route.get('/api/hotel',showHotels)
-Route.delete('/api/delete/:id',deleteHotel)
-Route.patch('/api/patch/:id',verifyAdmin,updateHotel)
+Route.post('/add',addHotel)
+Route.get('/hotel',showHotels)
+Route.delete('/delete/:id',deleteHotel)
+Route.patch('/patch/:id',verifyAdmin,updateHotel)
+Route.get('/countByCity',countByCity)
+Route.get('/countByTypes',countTypes)
 
+Route.get('/hotel/find',searchHotel)
 
 
 
